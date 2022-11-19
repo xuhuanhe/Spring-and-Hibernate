@@ -2,7 +2,12 @@ package com.luv2code.springdemo;
 
 public class TrackCoach implements Coach {
 
-
+	private HappyFortuneService fortuneService;
+	
+	
+	public TrackCoach(HappyFortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
 
 
 
@@ -11,6 +16,10 @@ public class TrackCoach implements Coach {
 		return "Run a hard 5k";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
 
 }
 
