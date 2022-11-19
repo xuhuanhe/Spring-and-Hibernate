@@ -2,7 +2,7 @@ package com.luv2code.springdemo;
 
 public class BaseballCoach implements Coach {
 
-	private HappyFortuneService fortuneService;
+	private FortuneService fortuneService;
 	
 	
 	public BaseballCoach(HappyFortuneService fortuneService) {
