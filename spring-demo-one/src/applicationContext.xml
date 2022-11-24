@@ -14,18 +14,13 @@
     <!-- Define your beans here -->
     <bean id="myFortune" class="com.luv2code.springdemo.HappyFortuneService">
     </bean>
-    <bean id="pratice2_Fortune" class="com.luv2code.springdemo.PraticeActivity2_DependencyInjection_FortuneServiceImplementation">
-    </bean>
+    
     
     <bean id="myCoach" class="com.luv2code.springdemo.TrackCoach">
     	<!-- set up constructor injection -->
     	<constructor-arg ref="myFortune"></constructor-arg>
     </bean>
     
-    <bean id="pratice2_Coach" class="com.luv2code.springdemo.PraticeActivity2_DependencyInjection_CoachImplementation">
-    	<!-- set up constructor injection -->
-    	<constructor-arg ref="pratice2_Fortune"></constructor-arg>
-    </bean>
     
     <bean id="myCricketCoach" class="com.luv2code.springdemo.CricketCoach">
     	<property name="fortuneService" ref="myFortune"></property>
@@ -33,8 +28,24 @@
     	<property name="team" value="${foo.team}"></property>
     </bean>
     
-    
+    <bean id="pratice2_Fortune" 
+    class="com.luv2code.springdemo.PraticeActivity2_DependencyInjection_FortuneServiceImplementation">
+    </bean>
+    <bean id="pratice2_Coach" 
+    class="com.luv2code.springdemo.PraticeActivity2_DependencyInjection_CoachImplementation">
+    	<!-- set up constructor injection -->
+    	<constructor-arg ref="pratice2_Fortune"></constructor-arg>
+    </bean>
 
+	<bean scope="prototype" 
+	id="pratice3_Coach" 
+	class="com.luv2code.springdemo.PraticeActivity3_BeanScopesWithXMLConfiguration_CoachImplementation"
+	init-method="callInit"
+	destroy-method="callDestroy"
+	>
+    </bean>
+    
+    
 </beans>
 
 
