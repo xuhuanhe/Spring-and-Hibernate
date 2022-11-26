@@ -2,7 +2,7 @@ package com.luv2code.springdemo;
 
 import org.springframework.stereotype.Component;
 
-@Component("TennisCoach")
+@Component
 public class TennisCoach implements Coach {
 
 	@Override
