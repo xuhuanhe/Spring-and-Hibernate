@@ -10,4 +10,10 @@ public class Practice4 implements Coach {
 		return "pract22222ice4";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
